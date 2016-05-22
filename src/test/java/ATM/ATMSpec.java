@@ -59,7 +59,5 @@ public class ATMSpec {
         assertEquals("Expected value should be 1500.00", expectedValue, actualValue, Math.ulp(.0001));
     }
 
-    @Test
-    public void createUserTest()
 
 }
