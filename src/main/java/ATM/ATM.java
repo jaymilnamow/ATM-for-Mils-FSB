@@ -11,26 +11,26 @@ public class ATM {
 
     public HashMap<String,User> createdUserHashMap = new HashMap<String, User>();
 
-    public double withdrawal(Accounts account, double amount){
+    public double withdrawal(Account account, double amount){
         account.transactionHistory.add(account.transactions.recordWithdrawal(amount));
         account.setAccountBalance(account.getAccountBalance() - amount);
         return account.getAccountBalance();
     }
 
-    public double deposit(Accounts account, double amount){
+    public double deposit(Account account, double amount){
         account.transactionHistory.add(account.transactions.recordDeposit(amount));
         account.setAccountBalance(account.getAccountBalance() + amount);
         return account.getAccountBalance();
     }
 
-    public double transfer(Accounts accountA, Accounts accountB, double amount){
+    public double transfer(Account accountA, Account accountB, double amount){
         accountA.transactionHistory.add(accountA.transactions.recordTransfer(amount));
         accountA.setAccountBalance(accountA.getAccountBalance() + amount);
         accountB.setAccountBalance(accountB.getAccountBalance() - amount);
         return accountA.getAccountBalance();
     }
 
-    public double checkBalance(Accounts accountA){
+    public double checkBalance(Account accountA){
         System.out.println(accountA.getAccountBalance());
         return accountA.getAccountBalance();
     }
@@ -53,23 +53,14 @@ public class ATM {
 
     public String printTransaction;
 
-    public void printTransactionHistory(Accounts account){
+    public void printTransactionHistory(Account account){
         for(int i=0; i<account.transactionHistory.size(); i++){
             printTransaction += account.transactionHistory.get(i);
         }
         System.out.println(printTransaction);
     }
 
- /*   public String logTransaction(String userName, Accounts accounts, String timeStamp, double amount User userName){
-        return transaction;
-    } */
-
-    public boolean verifyAccount(String userName, String password){
-        return false;
+    public void freezeAccount(Account account){
+        account.setAccountStatus("freeze");
     }
-
-    public void freezeAccount(){
-
-    }
-
 }

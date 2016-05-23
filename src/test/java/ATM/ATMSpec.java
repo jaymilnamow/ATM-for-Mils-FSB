@@ -1,6 +1,5 @@
 package ATM;
 
-import ATM.Accounts;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,14 +11,14 @@ import static org.junit.Assert.assertEquals;
  */
 public class ATMSpec {
 
-    Accounts testAccount;
-    Accounts testAccount2;
+    Account testAccount;
+    Account testAccount2;
     ATM testATM = new ATM();
 
     @Before
     public void initialize(){
-        testAccount = new Accounts();
-        testAccount2 = new Accounts();
+        testAccount = new Account("Bill");
+        testAccount2 = new Account("Bobby");
         testAccount.setAccountBalance(1500.00);
         testAccount2.setAccountBalance(1500.00);
     }

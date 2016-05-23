@@ -6,7 +6,7 @@ import java.util.HashMap;
 /**
  * Created by jaymilnamow on 5/19/16.
  */
-public class Accounts {
+public class Account {
 
     private double accountBalance;
     private String accountStatus = "open";
@@ -21,7 +21,7 @@ public class Accounts {
 
     public ArrayList<String> transactionHistory = new ArrayList<String>();
 
-    Accounts(String accoutHolderName){
+    Account(String accoutHolderName){
         accountNumberGenerator++;
         accountNumber = accountNumberGenerator;
         name = accoutHolderName;
@@ -36,14 +36,9 @@ public class Accounts {
         return accountBalance;
     }
 
-
-
-
-
-
-
-
-
+    public void setAccountStatus(String status){
+        this.status = status;
+    }
 }
 
 
